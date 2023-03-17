@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/HestiaService.Api/bin/Debug/net7.0
+/HestiaService.Api/obj
+/HestiaService.Application/bin/Debug/net7.0
+/HestiaService.Application/obj
+/HestiaService.Contracts/bin/Debug/net7.0
+/HestiaService.Contracts/obj
+/HestiaService.Domain/bin/Debug/net7.0
+/HestiaService.Domain/obj
+/HestiaService.Infrastructure/bin/Debug/net7.0
+/HestiaService.Infrastructure/obj
