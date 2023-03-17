@@ -17,6 +17,7 @@
     <ProjectReference Include="..\HestiaService.Application\HestiaService.Application.csproj" />
     <ProjectReference Include="..\HestiaService.Contracts\HestiaService.Contracts.csproj" />
     <ProjectReference Include="..\HestiaService.Domain\HestiaService.Domain.csproj" />
+    <ProjectReference Include="..\HestiaService.Infrastructure\HestiaService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

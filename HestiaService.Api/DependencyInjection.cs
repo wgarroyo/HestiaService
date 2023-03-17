@@ -8,8 +8,10 @@ public static class DependencyInjection
     {
         services.AddControllers();
         services.AddMappings();
+
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+
         return services;
     }
 }
