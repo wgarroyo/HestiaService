@@ -1,4 +1,5 @@
 ﻿using HestiaService.Api.Common.Mapping;
+using HestiaService.Api.WebSockets;
 
 namespace HestiaService.Api;
 
@@ -11,6 +12,7 @@ public static class DependencyInjection
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+        services.AddWebSocketManager();
 
         return services;
     }

@@ -13,7 +13,7 @@ public abstract class WebSocketHandler
     }
 
     public virtual async Task OnConnectedAsync(WebSocket socket)
-    {        
+    {
         WebSocketConnectionManager.AddSocket(socket);
         await Task.CompletedTask;
     }

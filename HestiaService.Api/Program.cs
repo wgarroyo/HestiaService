@@ -1,12 +1,10 @@
 using HestiaService.Api;
+using HestiaService.Api.WebSockets;
 using HestiaService.Application;
 using HestiaService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services
        .AddPresentation()
        .AddApplication()
@@ -22,6 +20,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+IServiceScopeFactory serviceFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+IServiceProvider serviceProvider = serviceFactory.CreateScope().ServiceProvider;
+NotificationsMessageHandler? service = serviceProvider.GetService<NotificationsMessageHandler>();
+
+if (service is null)
+    return;
+
+app.MapWebSocketManager("/ws", service);
 //app.UseAuthorization();
 app.MapControllers();
 app.Run();

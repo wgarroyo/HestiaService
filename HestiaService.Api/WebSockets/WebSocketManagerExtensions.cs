@@ -8,7 +8,7 @@ public static class WebSocketManagerExtensions
     {
         services.AddTransient<ConnectionManager>();
 
-        foreach (Type type in Assembly.GetEntryAssembly().ExportedTypes)
+        foreach (var type in Assembly.GetExecutingAssembly().ExportedTypes)
         {
             if (type.GetTypeInfo().BaseType == typeof(WebSocketHandler))
             {
